@@ -27,7 +27,7 @@ Unit verify commands below are shortened to the package under test.
   - Verify: `go build -o bin/symbiosis ./cmd/symbiosis && bin/symbiosis --version`
   - Files: `go.mod`, `cmd/symbiosis/main.go`, `.gitignore`, `LICENSE`, `README.md`
 
-- [ ] **T0.3 CLI skeleton**
+- [x] **T0.3 CLI skeleton**
   - Acceptance: root command plus `bootstrap`, `plan`, `status`, `doctor`, `destroy` exist as stubs that return "not implemented"; `--help` lists all five; global `--profile` and `--region` flags parse.
   - Verify: `go test ./cmd/symbiosis/...`
   - Files: `cmd/symbiosis/root.go`, `cmd/symbiosis/root_test.go`, `go.mod`, `go.sum`

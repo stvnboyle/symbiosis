@@ -10,10 +10,8 @@ import (
 var version = "dev"
 
 func main() {
-	if len(os.Args) == 2 && os.Args[1] == "--version" {
-		fmt.Println("symbiosis version", version)
-		return
+	if err := newRootCmd().Execute(); err != nil {
+		fmt.Fprintln(os.Stderr, "error:", err)
+		os.Exit(1)
 	}
-	fmt.Fprintln(os.Stderr, "symbiosis: no commands yet")
-	os.Exit(1)
 }
