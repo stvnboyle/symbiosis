@@ -44,7 +44,7 @@ Unit verify commands below are shortened to the package under test.
   - Verify: `go test ./internal/reconcile/...`
   - Files: `internal/reconcile/resource.go`, `internal/reconcile/fake_test.go`, `docs/adr/0001-resource-interface.md`
 
-- [ ] **T1.2 Dependency ordering**
+- [x] **T1.2 Dependency ordering**
   - Acceptance: resources sort so dependencies come first; the order is deterministic; a cycle, a duplicate id and a dependency on an unknown id each return a clear error.
   - Verify: `go test ./internal/reconcile/... -run Graph`
   - Files: `internal/reconcile/graph.go`, `internal/reconcile/graph_test.go`
