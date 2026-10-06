@@ -1,0 +1,11 @@
+# Build output
+bin/
+
+# Local config: holds your account id and alert email
+symbiosis.yaml
+
+# Test and coverage output
+*.test
+*.out
+
+.DS_Store

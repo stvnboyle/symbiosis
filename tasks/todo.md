@@ -1,7 +1,7 @@
 # Tasks: symbiosis / foundation
 
 Breaks down [plan.md](plan.md), which implements [SPEC-foundation.md](../SPEC-foundation.md).
-Status: awaiting review.
+Status: approved 2026-10-06. In progress.
 
 Rules for every task:
 
@@ -22,7 +22,7 @@ Unit verify commands below are shortened to the package under test.
   - Verify: `git log --oneline` shows the commit; `gh repo view --json visibility` reports `PRIVATE`.
   - Files: `CAPABILITY-MAP.md`, `SPEC-foundation.md`, `tasks/plan.md`, `tasks/todo.md`
 
-- [ ] **T0.2 Go module and project files**
+- [x] **T0.2 Go module and project files**
   - Acceptance: module initialised on the current stable Go; binary builds and prints a version; Apache-2.0 licence; `.gitignore` excludes `bin/` and `symbiosis.yaml`.
   - Verify: `go build -o bin/symbiosis ./cmd/symbiosis && bin/symbiosis --version`
   - Files: `go.mod`, `cmd/symbiosis/main.go`, `.gitignore`, `LICENSE`, `README.md`

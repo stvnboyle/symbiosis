@@ -1,6 +1,6 @@
 # Plan: symbiosis / foundation
 
-Implements [SPEC-foundation.md](../SPEC-foundation.md). Status: awaiting review.
+Implements [SPEC-foundation.md](../SPEC-foundation.md). Status: approved 2026-10-06.
 
 ## Approach
 
