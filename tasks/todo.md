@@ -68,7 +68,7 @@ Unit verify commands below are shortened to the package under test.
 
 ## Slice 2: AWS session and `doctor` (read-only AWS)
 
-- [ ] **T2.1 Local config**
+- [x] **T2.1 Local config**
   - Acceptance: `symbiosis.yaml` loads and validates account id, region, profile and alert email; a missing or malformed file gives an actionable error; an example file is committed and the real one is git-ignored.
   - Verify: `go test ./internal/config/...`
   - Files: `internal/config/config.go`, `internal/config/config_test.go`, `symbiosis.example.yaml`
