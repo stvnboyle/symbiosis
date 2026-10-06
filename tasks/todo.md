@@ -49,7 +49,7 @@ Unit verify commands below are shortened to the package under test.
   - Verify: `go test ./internal/reconcile/... -run Graph`
   - Files: `internal/reconcile/graph.go`, `internal/reconcile/graph_test.go`
 
-- [ ] **T1.3 Planner**
+- [x] **T1.3 Planner**
   - Acceptance: observes every resource and returns a plan of create, update, delete and no-op entries; planning makes zero write calls; an observe error aborts with the resource id in the message.
   - Verify: `go test ./internal/reconcile/... -run Plan`
   - Files: `internal/reconcile/plan.go`, `internal/reconcile/plan_test.go`
