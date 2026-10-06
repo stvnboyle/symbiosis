@@ -78,7 +78,7 @@ Unit verify commands below are shortened to the package under test.
   - Verify: `go test ./internal/awsx/... -run 'Session|Pin'`
   - Files: `internal/awsx/session.go`, `internal/awsx/pin.go`, `internal/awsx/session_test.go`, `internal/awsx/pin_test.go`
 
-- [ ] **T2.3 Error classification and retry**
+- [x] **T2.3 Error classification and retry**
   - Acceptance: helpers identify not-found, already-exists, access-denied and not-yet-consistent errors by AWS error code; a bounded backoff retry honours context cancellation and retries only errors marked retryable.
   - Verify: `go test ./internal/awsx/... -run 'Error|Retry'`
   - Files: `internal/awsx/errors.go`, `internal/awsx/retry.go`, `internal/awsx/errors_test.go`, `internal/awsx/retry_test.go`
