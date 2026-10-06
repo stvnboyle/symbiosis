@@ -32,7 +32,7 @@ Unit verify commands below are shortened to the package under test.
   - Verify: `go test ./cmd/symbiosis/...`
   - Files: `cmd/symbiosis/root.go`, `cmd/symbiosis/root_test.go`, `go.mod`, `go.sum`
 
-- [ ] **T0.4 Lint and CI**
+- [x] **T0.4 Lint and CI**
   - Acceptance: lint config in place; a GitHub Actions workflow runs build, vet, unit tests and lint on every push; no AWS credentials in CI.
   - Verify: `golangci-lint run ./...` passes locally; the workflow is green on the first push.
   - Files: `.golangci.yml`, `.github/workflows/ci.yml`
