@@ -73,7 +73,7 @@ Unit verify commands below are shortened to the package under test.
   - Verify: `go test ./internal/config/...`
   - Files: `internal/config/config.go`, `internal/config/config_test.go`, `symbiosis.example.yaml`
 
-- [ ] **T2.2 Session and account pin**
+- [x] **T2.2 Session and account pin**
   - Acceptance: SDK config loads from the named profile and region; the caller identity is fetched through a narrow STS interface; a pinned account that differs from the caller's returns an error before any other call.
   - Verify: `go test ./internal/awsx/... -run 'Session|Pin'`
   - Files: `internal/awsx/session.go`, `internal/awsx/pin.go`, `internal/awsx/session_test.go`, `internal/awsx/pin_test.go`
