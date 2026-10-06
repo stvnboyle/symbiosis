@@ -59,7 +59,7 @@ Unit verify commands below are shortened to the package under test.
   - Verify: `go test ./internal/reconcile/... -run 'Apply|Destroy' -race`
   - Files: `internal/reconcile/apply.go`, `internal/reconcile/apply_test.go`
 
-- [ ] **T1.5 Plan output**
+- [x] **T1.5 Plan output**
   - Acceptance: a plan renders as readable text with one line per resource and a summary line in the form "N to create, N to update, N to delete"; output is stable across runs.
   - Verify: `go test ./internal/reconcile/... -run Render`; coverage for the package is at least 90%.
   - Files: `internal/reconcile/render.go`, `internal/reconcile/render_test.go`
