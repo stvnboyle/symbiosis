@@ -64,7 +64,7 @@ Unit verify commands below are shortened to the package under test.
   - Verify: `go test ./internal/reconcile/... -run Render`; coverage for the package is at least 90%.
   - Files: `internal/reconcile/render.go`, `internal/reconcile/render_test.go`
 
-**CHECKPOINT A: you review the `Resource` interface and the plan output.**
+**CHECKPOINT A: you review the `Resource` interface and the plan output.** Passed 2026-10-06.
 
 ## Slice 2: AWS session and `doctor` (read-only AWS)
 

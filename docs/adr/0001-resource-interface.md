@@ -1,6 +1,6 @@
 # ADR 0001: The Resource interface
 
-Status: proposed, for review at Checkpoint A
+Status: accepted (Checkpoint A, 2026-10-06)
 Date: 2026-10-06
 
 ## Context
