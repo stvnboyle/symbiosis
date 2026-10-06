@@ -10,6 +10,10 @@ import (
 var errNotImplemented = errors.New("not implemented")
 
 func newRootCmd() *cobra.Command {
+	return newRootCmdWith(realDeps())
+}
+
+func newRootCmdWith(d deps) *cobra.Command {
 	root := &cobra.Command{
 		Use:     "symbiosis",
 		Short:   "A small platform-as-a-service that runs in your own AWS account",
@@ -18,14 +22,15 @@ func newRootCmd() *cobra.Command {
 		SilenceUsage:  true,
 		SilenceErrors: true,
 	}
-	root.PersistentFlags().String("profile", "", "AWS named profile to use")
-	root.PersistentFlags().String("region", "", "AWS region to operate in")
+	root.PersistentFlags().String("config", "symbiosis.yaml", "path to the config file")
+	root.PersistentFlags().String("profile", "", "AWS named profile to use (overrides the config file)")
+	root.PersistentFlags().String("region", "", "AWS region to operate in (overrides the config file)")
 
 	root.AddCommand(
 		stubCmd("bootstrap", "Prepare an AWS account for symbiosis"),
 		stubCmd("plan", "Show what would change, without changing anything"),
 		stubCmd("status", "List owned resources and whether they match desired state"),
-		stubCmd("doctor", "Check credentials, the pinned account, region and tool versions"),
+		newDoctorCmd(d),
 		stubCmd("destroy", "Remove everything symbiosis created"),
 	)
 	return root

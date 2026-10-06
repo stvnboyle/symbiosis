@@ -83,7 +83,7 @@ Unit verify commands below are shortened to the package under test.
   - Verify: `go test ./internal/awsx/... -run 'Error|Retry'`
   - Files: `internal/awsx/errors.go`, `internal/awsx/retry.go`, `internal/awsx/errors_test.go`, `internal/awsx/retry_test.go`
 
-- [ ] **T2.4 `doctor` command**
+- [ ] **T2.4 `doctor` command** (code and unit tests done 2026-10-06; the manual run against the sandbox account is outstanding)
   - Acceptance: reports the profile, region, caller identity, pin match, and Go, Docker and AWS CLI versions; exits non-zero if any check fails; makes no write calls.
   - Verify: `go test ./cmd/symbiosis/... -run Doctor`, then a manual `bin/symbiosis doctor` against the sandbox account.
   - Files: `cmd/symbiosis/doctor.go`, `cmd/symbiosis/doctor_test.go`

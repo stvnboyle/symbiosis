@@ -9,6 +9,9 @@ import (
 
 var subcommands = []string{"bootstrap", "plan", "status", "doctor", "destroy"}
 
+// stubs are the subcommands that are not implemented yet.
+var stubs = []string{"bootstrap", "plan", "status", "destroy"}
+
 // run executes the root command with args and returns what it printed.
 func run(t *testing.T, args ...string) (string, error) {
 	t.Helper()
@@ -34,7 +37,7 @@ func TestHelpListsEverySubcommand(t *testing.T) {
 }
 
 func TestSubcommandsAreStubs(t *testing.T) {
-	for _, name := range subcommands {
+	for _, name := range stubs {
 		t.Run(name, func(t *testing.T) {
 			_, err := run(t, name)
 			if !errors.Is(err, errNotImplemented) {
@@ -58,11 +61,11 @@ func TestGlobalFlagsParse(t *testing.T) {
 	root := newRootCmd()
 	root.SetOut(&bytes.Buffer{})
 	root.SetErr(&bytes.Buffer{})
-	root.SetArgs([]string{"doctor", "--profile", "sandbox", "--region", "eu-west-2"})
+	root.SetArgs([]string{"plan", "--profile", "sandbox", "--region", "eu-west-2", "--config", "x.yaml"})
 	if err := root.Execute(); !errors.Is(err, errNotImplemented) {
 		t.Fatalf("got error %v, want errNotImplemented", err)
 	}
-	for flag, want := range map[string]string{"profile": "sandbox", "region": "eu-west-2"} {
+	for flag, want := range map[string]string{"profile": "sandbox", "region": "eu-west-2", "config": "x.yaml"} {
 		got, err := root.PersistentFlags().GetString(flag)
 		if err != nil {
 			t.Fatalf("--%s: %v", flag, err)
