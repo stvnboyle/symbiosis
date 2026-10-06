@@ -39,7 +39,7 @@ Unit verify commands below are shortened to the package under test.
 
 ## Slice 1: Reconciler engine (no AWS)
 
-- [ ] **T1.1 Resource interface and types**
+- [x] **T1.1 Resource interface and types**
   - Acceptance: `Resource`, `Actual` and `Change` are defined as in the spec; a configurable fake resource exists for tests and counts its read and write calls; ADR 0001 sketches one `network` and one `compute` resource against the interface to show it fits.
   - Verify: `go test ./internal/reconcile/...`
   - Files: `internal/reconcile/resource.go`, `internal/reconcile/fake_test.go`, `docs/adr/0001-resource-interface.md`
