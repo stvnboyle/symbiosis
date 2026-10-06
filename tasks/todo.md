@@ -54,7 +54,7 @@ Unit verify commands below are shortened to the package under test.
   - Verify: `go test ./internal/reconcile/... -run Plan`
   - Files: `internal/reconcile/plan.go`, `internal/reconcile/plan_test.go`
 
-- [ ] **T1.4 Apply and destroy**
+- [x] **T1.4 Apply and destroy**
   - Acceptance: apply runs in dependency order and stops at the first error; destroy runs in reverse order; a second apply makes zero write calls; an apply that fails part-way converges when re-run; context cancellation stops between resources.
   - Verify: `go test ./internal/reconcile/... -run 'Apply|Destroy' -race`
   - Files: `internal/reconcile/apply.go`, `internal/reconcile/apply_test.go`
