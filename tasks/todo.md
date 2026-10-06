@@ -17,7 +17,7 @@ Unit verify commands below are shortened to the package under test.
 
 ## Slice 0: Scaffold (no AWS)
 
-- [ ] **T0.1 Repository and spec commit**
+- [x] **T0.1 Repository and spec commit**
   - Acceptance: `~/symbiosis` is a git repo on `main`; the capability map, spec, plan and this task list are committed; a private GitHub repo `symbiosis` exists as `origin`.
   - Verify: `git log --oneline` shows the commit; `gh repo view --json visibility` reports `PRIVATE`.
   - Files: `CAPABILITY-MAP.md`, `SPEC-foundation.md`, `tasks/plan.md`, `tasks/todo.md`
