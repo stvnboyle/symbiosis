@@ -4,8 +4,12 @@ Your own cloud platform, running in your own AWS account. A Go CLI takes an app 
 Dockerfile to a live HTTPS URL, and provisions every AWS resource through direct API
 calls: no Terraform, CDK or CloudFormation.
 
-It has two goals of equal weight: ship real web apps, and learn how the core AWS
-services fit together by building on them directly.
+It exists for three reasons:
+
+- **To ship real web apps** on infrastructure I control and understand.
+- **To learn how the core AWS services fit together**, by calling them directly.
+- **To learn how a cloud platform is built on top of AWS**: how products like Heroku
+  and Vercel turn raw AWS services into "deploy my app".
 
 **Status:** early. The `foundation` module is in progress and nothing is usable yet.
 

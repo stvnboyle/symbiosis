@@ -4,11 +4,13 @@ A small platform-as-a-service that runs in your own AWS account. A Go CLI takes 
 from a Dockerfile to a live HTTPS URL, provisioning every AWS resource through direct
 API calls (no Terraform, CDK or CloudFormation).
 
-Two goals carry equal weight:
+Three goals carry equal weight:
 
 1. **Ship real web apps** on it.
 2. **Learn how the core AWS services interact**, well enough to discuss and architect
    AWS infrastructure with confidence.
+3. **Learn how a cloud platform is built on top of AWS**: how a platform's control
+   plane turns raw AWS services into "deploy my app".
 
 ## Guiding constraints
 
