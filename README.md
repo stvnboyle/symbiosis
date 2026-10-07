@@ -1,13 +1,30 @@
 # symbiosis
 
-A small platform-as-a-service that runs in your own AWS account. A Go CLI takes an app
-from a Dockerfile to a live HTTPS URL, and provisions every AWS resource through direct
-API calls: no Terraform, CDK or CloudFormation.
+Your own cloud platform, running in your own AWS account. A Go CLI takes an app from a
+Dockerfile to a live HTTPS URL, and provisions every AWS resource through direct API
+calls: no Terraform, CDK or CloudFormation.
 
 It has two goals of equal weight: ship real web apps, and learn how the core AWS
 services fit together by building on them directly.
 
 **Status:** early. The `foundation` module is in progress and nothing is usable yet.
+
+## What kind of cloud this is
+
+A cloud provider does two jobs. symbiosis does one of them.
+
+| | Who does it here |
+|---|---|
+| **The control plane:** software that turns "run this app" into the right resources, in the right order, keeps them in the desired state and tears them down cleanly | symbiosis |
+| **The infrastructure:** data centres, virtual machines, the physical network, storage | AWS |
+
+That makes symbiosis a personal platform-as-a-service on top of AWS, the same layer
+Heroku and Vercel sit at. Using it should feel like having your own cloud: one command,
+and your app is live on your own domain, on infrastructure you control and understand.
+
+The core of it is a reconciler: observe what exists in AWS, diff it against what should
+exist, and apply the difference. That is the idea behind Terraform, Kubernetes
+controllers and AWS's own CloudFormation, built here from scratch to see how it works.
 
 ## How the project is organised
 
