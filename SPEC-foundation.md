@@ -5,15 +5,22 @@ Every other module depends on it.
 
 ## Objective
 
-Give symbiosis a safe, repeatable footing in one AWS account, and build the reconciler
-engine that every later module uses to create, update and delete AWS resources.
+symbiosis is my own cloud, built on AWS. `foundation` is its base layer: the part every
+cloud platform needs before it can run anything, which is an identity to act as, a
+record of what it owns, and an engine that makes real infrastructure match what was
+asked for.
+
+This module gives symbiosis a safe, repeatable footing in one AWS account, and builds
+the reconciler engine that every later module uses to create, update and delete AWS
+resources.
 
 When this module is done, three things are true:
 
 1. `symbiosis bootstrap` turns an empty sandbox account into one that is ready for the
    other modules, and running it again changes nothing.
 2. `symbiosis destroy` removes everything symbiosis created.
-3. You can explain how IAM, STS, DynamoDB and S3 work and why each is here.
+3. You can explain how the platform's base layer is built, how IAM, STS, DynamoDB and
+   S3 work underneath it, and why each is here.
 
 ### User stories
 
@@ -208,7 +215,8 @@ Conventions:
 9. The budget exists at the configured ceiling with alerts at 50%, 80% and 100% addressed
    to the configured email. An integration test reads these back through the API.
 10. `go test ./... -race` and `golangci-lint run` pass with the coverage targets met.
-11. `docs/learn/foundation.md` exists and explains, with reference to this code: how IAM
+11. `docs/learn/foundation.md` exists and explains, with reference to this code: how the
+    reconciler works and why a control plane is built around one; how IAM
     evaluates a request, trust policy versus permission policy, how `AssumeRole` and
     request signing work, DynamoDB keys and consistency, and S3 bucket policy versus
     public access block.
