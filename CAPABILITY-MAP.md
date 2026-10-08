@@ -1,16 +1,19 @@
 # Capability Map: symbiosis
 
-A small platform-as-a-service that runs in your own AWS account. A Go CLI takes an app
-from a Dockerfile to a live HTTPS URL, provisioning every AWS resource through direct
-API calls (no Terraform, CDK or CloudFormation).
+symbiosis is my own cloud, built on AWS: a platform-as-a-service that runs in my own
+AWS account. A Go CLI takes an app from a Dockerfile to a live HTTPS URL, provisioning
+every AWS resource through direct API calls (no Terraform, CDK or CloudFormation).
 
-Three goals carry equal weight:
+The project is to build a cloud platform, not to work through AWS services one by one.
+Each module below is a layer of that platform, and is specified as one.
 
-1. **Ship real web apps** on it.
-2. **Learn how the core AWS services interact**, well enough to discuss and architect
-   AWS infrastructure with confidence.
-3. **Learn how a cloud platform is built on top of AWS**: how a platform's control
-   plane turns raw AWS services into "deploy my app".
+Goals, in order:
+
+1. **Build my own cloud.** The control plane that turns raw AWS services into "deploy
+   my app", designed and written from scratch, and understood at every layer.
+2. **Ship real web apps** on it.
+3. **Know AWS well enough to discuss and architect infrastructure with confidence**, as
+   a result of building on its services directly.
 
 ## Guiding constraints
 
@@ -20,7 +23,9 @@ Three goals carry equal weight:
   symbiosis's own reconciler.
 - **Cost is a requirement.** Every resource is tagged, `destroy` returns the account to
   zero, and a budget alert exists before anything billable does.
-- **Learning is a deliverable.** Every module ships `docs/learn/<module-id>.md`.
+- **Understanding is a deliverable.** Every module ships `docs/learn/<module-id>.md`,
+  covering how that layer of the platform is built and how the AWS services under it
+  behave.
 
 ## v1: the core path (source → HTTPS URL)
 
@@ -60,7 +65,7 @@ block them.
 | Decision | Choice | Why |
 |---|---|---|
 | Compute | ECS on Fargate | Runs any Dockerfile, no servers to patch, teaches task/execution roles and awsvpc networking |
-| Provisioning | Own reconciler over the SDK | Deepest learning; it is what Terraform does underneath |
+| Provisioning | Own reconciler over the SDK | A cloud's control plane is a reconciler; building one is the point. It is what Terraform does underneath |
 | Language | Go | Single-binary CLI, the standard language for infrastructure tooling |
 | Interface | CLI first | Runs from a laptop with a named AWS profile; hosted control plane is v2 |
 | Image builds | Local Docker, push to ECR | Removes CodeBuild from v1 |
